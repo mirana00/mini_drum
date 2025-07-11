@@ -28,8 +28,8 @@ p{
 
 button {
   position: absolute;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: #1e1e1e;
   border: none;
@@ -77,5 +77,46 @@ button[data-key="H"] { bottom: 15%; left: 50%; transform: translateX(-50%); }
   100% {
     transform: scale(1);
     box-shadow: 0 0 0px #ff0055;
+  }
+}
+
+
+@media  (max-width: 600px) {
+     .drum-kit {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 90vw;
+    height: auto;
+    padding: 20px;
+    max-width: 350px;
+    margin: auto;
+  }
+
+  button {
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    max-width: 100px;
+    max-height: 100px;
+    font-size: 1rem;
+  }
+
+  button[data-key="A"] { top: 20%; left: 25%; }
+button[data-key="S"] { top: 10%; left: 50%; transform: translateX(-50%); }
+button[data-key="D"] { top: 20%; right: 25%; }
+
+button[data-key="F"] { top: 42%; left: 40%; }
+button[data-key="G"] { top: 63%; right: 25%; }
+
+button[data-key="H"] { bottom: 15%; left: 50%; transform: translateX(-50%); }
+ button[data-key="V"] { top: 63%; right: 50%; }
+}
+
+@media (max-width: 400px){
+     button {
+    font-size: 0.9rem;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
   }
 }

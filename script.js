@@ -1,5 +1,3 @@
-document.addEventListener("keydown", (event)=>{
-const key = event.key.toUpperCase();
 
 const sounds = {
     A: "sounds/clap.mp3",
@@ -13,6 +11,11 @@ const sounds = {
 
 };
 
+
+
+
+document.addEventListener("keydown", (event)=>{
+const key = event.key.toUpperCase();
 const soundFile = sounds[key];
 
 if(soundFile) {
