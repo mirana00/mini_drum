@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at center, #121212, #0d0d0d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+p{
+    font-weight: 200;
+    font-size: small;
+}
+.drum-kit {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #1e1e1e;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+button:hover {
+  background: #2a2a2a;
+}
+
+
+button.active {
+  animation: pulse 0.2s ease;
+  background-color: #ff0055;
+  z-index: 1;
+}
+
+
+/* Positioning like a circular drum pad */
+button[data-key="A"] { top: 20%; left: 25%; }
+button[data-key="S"] { top: 10%; left: 50%; transform: translateX(-50%); }
+button[data-key="D"] { top: 20%; right: 25%; }
+
+button[data-key="F"] { top: 45%; left: 25%; }
+button[data-key="G"] { top: 45%; right: 25%; }
+
+button[data-key="H"] { bottom: 15%; left: 50%; transform: translateX(-50%); }
+ button[data-key="V"] { top: 45%; right: 47%; }
+
+
+ @keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0px #ff0055;
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px #ff0055;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0px #ff0055;
+  }
+}
